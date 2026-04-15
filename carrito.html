@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carrito Maison Épure: revisa tus productos, cantidades y total antes de finalizar la compra." />
+  <title>Carrito | Maison Épure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: "#F7F4EF",
+            noir: "#151515",
+            taupe: "#8A7F74",
+            sable: "#DED6CA"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-creme text-noir font-sans antialiased">
+  <header class="border-b border-sable/80 bg-creme/95 sticky top-0 z-30 backdrop-blur">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-2xl font-serif tracking-wide" title="Ir a la página principal de Maison Épure">Maison Épure</a>
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.18em]">
+          <a href="index.html" class="hover:text-taupe transition">Inicio</a>
+          <a href="catalogo.html" class="hover:text-taupe transition">Catálogo</a>
+          <a href="carrito.html" class="text-taupe">Carrito</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <form role="search" class="hidden sm:block">
+            <label for="search-cart" class="sr-only">Buscar productos</label>
+            <input id="search-cart" type="search" placeholder="Buscar" class="w-32 lg:w-44 rounded-full border border-sable bg-white/80 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-noir/20" />
+          </form>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.18em] hover:text-taupe transition" title="Acceder a tu cuenta">Cuenta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-8">
+      <h1 class="font-serif text-4xl">Carrito</h1>
+      <p class="text-noir/70 mt-2">Revisa tus productos antes de completar tu compra.</p>
+    </section>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
+      <section class="xl:col-span-2 bg-white border border-sable/80 rounded-2xl overflow-x-auto">
+        <h2 class="sr-only">Productos en carrito</h2>
+        <table class="min-w-full text-left">
+          <thead class="bg-sable/35 text-sm uppercase tracking-[0.12em]">
+            <tr>
+              <th class="px-4 py-4">Producto</th>
+              <th class="px-4 py-4">Precio</th>
+              <th class="px-4 py-4">Cantidad</th>
+              <th class="px-4 py-4">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-t border-sable/70">
+              <td class="px-4 py-4">
+                <div class="flex items-center gap-3 min-w-[220px]">
+                  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=300&q=80" alt="Miniatura blazer marfil Aline" class="h-16 w-14 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-medium">Blazer Aline</p>
+                    <p class="text-noir/70">Talla M</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-4">€390</td>
+              <td class="px-4 py-4">1</td>
+              <td class="px-4 py-4 font-semibold">€390</td>
+            </tr>
+            <tr class="border-t border-sable/70">
+              <td class="px-4 py-4">
+                <div class="flex items-center gap-3 min-w-[220px]">
+                  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80" alt="Miniatura vestido Noémie" class="h-16 w-14 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-medium">Robe Noémie</p>
+                    <p class="text-noir/70">Talla S</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-4">€460</td>
+              <td class="px-4 py-4">1</td>
+              <td class="px-4 py-4 font-semibold">€460</td>
+            </tr>
+            <tr class="border-t border-sable/70">
+              <td class="px-4 py-4">
+                <div class="flex items-center gap-3 min-w-[220px]">
+                  <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=300&q=80" alt="Miniatura camisa Élise" class="h-16 w-14 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-medium">Chemise Élise</p>
+                    <p class="text-noir/70">Talla L</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-4">€190</td>
+              <td class="px-4 py-4">2</td>
+              <td class="px-4 py-4 font-semibold">€380</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="bg-white border border-sable/80 rounded-2xl p-6">
+        <h2 class="font-serif text-2xl">Resumen</h2>
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex justify-between">
+            <dt class="text-noir/70">Subtotal</dt>
+            <dd>€1230</dd>
+          </div>
+          <div class="flex justify-between">
+            <dt class="text-noir/70">Impuestos (21%)</dt>
+            <dd>€258.30</dd>
+          </div>
+          <div class="border-t border-sable pt-4 flex justify-between font-semibold text-lg">
+            <dt>Total</dt>
+            <dd>€1488.30</dd>
+          </div>
+        </dl>
+        <a href="checkout.html" class="mt-7 inline-flex w-full items-center justify-center rounded-full bg-noir text-creme px-6 py-3 text-sm uppercase tracking-[0.15em] hover:bg-noir/90 transition">Comprar</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="border-t border-sable bg-white/70 mt-14">
+    <div class="container mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section>
+        <h2 class="font-serif text-xl mb-3">Maison Épure</h2>
+        <p class="text-noir/70">Moda francesa de lujo minimalista para una elegancia cotidiana y atemporal.</p>
+      </section>
+      <nav aria-label="Categorías">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Categorías</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="catalogo.html" class="hover:text-noir">Abrigos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Vestidos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Camisas</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Legal</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="#" class="hover:text-noir">Términos y condiciones</a></li>
+          <li><a href="#" class="hover:text-noir">Política de privacidad</a></li>
+          <li><a href="#" class="hover:text-noir">Cambios y devoluciones</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Contacto</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li>Email: concierge@maisonepure.com</li>
+          <li>Tel: +33 1 84 00 00 00</li>
+          <li>París, Francia</li>
+        </ul>
+      </section>
+    </div>
+  </footer>
+</body>
+</html>
