@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ficha de producto Maison Épure: detalle completo de prenda de lujo minimalista francés." />
+  <title>Producto | Maison Épure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: "#F7F4EF",
+            noir: "#151515",
+            taupe: "#8A7F74",
+            sable: "#DED6CA"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Blazer Aline",
+    "image": [
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Blazer marfil estructurado de lana virgen con patronaje parisino minimalista.",
+    "sku": "ME-ALINE-001",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maison Épure"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://example.com/producto.html",
+      "priceCurrency": "EUR",
+      "price": "390.00",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body class="bg-creme text-noir font-sans antialiased">
+  <header class="border-b border-sable/80 bg-creme/95 sticky top-0 z-30 backdrop-blur">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-2xl font-serif tracking-wide" title="Ir a la página principal de Maison Épure">Maison Épure</a>
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.18em]">
+          <a href="index.html" class="hover:text-taupe transition">Inicio</a>
+          <a href="catalogo.html" class="hover:text-taupe transition">Catálogo</a>
+          <a href="carrito.html" class="hover:text-taupe transition">Carrito</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <form role="search" class="hidden sm:block">
+            <label for="search-product" class="sr-only">Buscar productos</label>
+            <input id="search-product" type="search" placeholder="Buscar" class="w-32 lg:w-44 rounded-full border border-sable bg-white/80 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-noir/20" />
+          </form>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.18em] hover:text-taupe transition" title="Acceder a tu cuenta">Cuenta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 py-10">
+    <article>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <section>
+          <h1 class="sr-only">Imagen principal de Blazer Aline</h1>
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80" alt="Blazer marfil estructurado de lujo para mujer" class="w-full h-[520px] object-cover rounded-2xl border border-sable/70" />
+        </section>
+
+        <section class="bg-white border border-sable/80 rounded-2xl p-6 sm:p-8">
+          <p class="uppercase tracking-[0.18em] text-xs text-taupe">Maison Épure</p>
+          <h2 class="font-serif text-4xl mt-2">Blazer Aline</h2>
+          <p class="mt-2 text-sm text-noir/70">Ref: ME-ALINE-001</p>
+
+          <fieldset class="mt-6">
+            <legend class="text-sm mb-3">Talla</legend>
+            <div class="flex gap-3" role="radiogroup" aria-label="Selecciona talla">
+              <button type="button" class="rounded-full border border-noir px-4 py-2 text-sm">S</button>
+              <button type="button" class="rounded-full border border-noir bg-noir text-creme px-4 py-2 text-sm">M</button>
+              <button type="button" class="rounded-full border border-noir px-4 py-2 text-sm">L</button>
+            </div>
+          </fieldset>
+
+          <p class="mt-6 text-3xl font-semibold">€390</p>
+
+          <div class="mt-5">
+            <label for="quantity" class="text-sm">Cantidad</label>
+            <input id="quantity" type="number" min="1" value="1" class="mt-2 w-28 rounded-xl border border-sable bg-creme px-4 py-3 focus:outline-none focus:ring-2 focus:ring-noir/20" />
+          </div>
+
+          <a href="carrito.html" class="mt-7 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-noir text-creme px-7 py-3 text-sm uppercase tracking-[0.16em] hover:bg-noir/90 transition">Agregar al carrito</a>
+        </section>
+      </div>
+
+      <section class="mt-12 bg-white border border-sable/80 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-serif text-3xl mb-4">Descripción Detallada</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-noir/80 leading-relaxed">
+          <div>
+            <h3 class="font-semibold text-noir mb-2">Materiales</h3>
+            <p>Confeccionado en lana virgen certificada, forro interior de viscosa transpirable y botones forrados a mano. La estructura del hombro mantiene una silueta limpia sin perder comodidad.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-noir mb-2">Uso</h3>
+            <p>Ideal para ocasiones profesionales y eventos de tarde. Combina con pantalón sastre de tiro alto o denim oscuro para un contraste contemporáneo y sofisticado.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-sable bg-white/70 mt-14">
+    <div class="container mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section>
+        <h2 class="font-serif text-xl mb-3">Maison Épure</h2>
+        <p class="text-noir/70">Moda francesa de lujo minimalista para una elegancia cotidiana y atemporal.</p>
+      </section>
+      <nav aria-label="Categorías">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Categorías</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="catalogo.html" class="hover:text-noir">Abrigos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Vestidos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Camisas</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Legal</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="#" class="hover:text-noir">Términos y condiciones</a></li>
+          <li><a href="#" class="hover:text-noir">Política de privacidad</a></li>
+          <li><a href="#" class="hover:text-noir">Cambios y devoluciones</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Contacto</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li>Email: concierge@maisonepure.com</li>
+          <li>Tel: +33 1 84 00 00 00</li>
+          <li>París, Francia</li>
+        </ul>
+      </section>
+    </div>
+  </footer>
+</body>
+</html>
