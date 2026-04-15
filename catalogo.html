@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo Maison Épure: prendas de lujo minimalista francés con filtros por categoría y talla." />
+  <title>Catálogo | Maison Épure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: "#F7F4EF",
+            noir: "#151515",
+            taupe: "#8A7F74",
+            sable: "#DED6CA"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-creme text-noir font-sans antialiased">
+  <header class="border-b border-sable/80 bg-creme/95 sticky top-0 z-30 backdrop-blur">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-2xl font-serif tracking-wide" title="Ir a la página principal de Maison Épure">Maison Épure</a>
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.18em]">
+          <a href="index.html" class="hover:text-taupe transition">Inicio</a>
+          <a href="catalogo.html" class="text-taupe">Catálogo</a>
+          <a href="carrito.html" class="hover:text-taupe transition">Carrito</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <form role="search" class="hidden sm:block">
+            <label for="search-catalog" class="sr-only">Buscar productos</label>
+            <input id="search-catalog" type="search" placeholder="Buscar" class="w-32 lg:w-44 rounded-full border border-sable bg-white/80 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-noir/20" />
+          </form>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.18em] hover:text-taupe transition" title="Acceder a tu cuenta">Cuenta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-8">
+      <h1 class="font-serif text-4xl">Catálogo</h1>
+      <p class="text-noir/70 mt-2">20 piezas seleccionadas para un guardarropa elegante y atemporal.</p>
+    </section>
+
+    <section class="bg-white border border-sable rounded-2xl p-4 sm:p-6 mb-8">
+      <h2 class="font-serif text-2xl mb-4">Filtros</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="filter-category" class="block text-sm mb-2">Categoría</label>
+          <select id="filter-category" class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20">
+            <option value="all">Todas</option>
+            <option value="abrigos">Abrigos</option>
+            <option value="vestidos">Vestidos</option>
+            <option value="camisas">Camisas</option>
+            <option value="pantalones">Pantalones</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-size" class="block text-sm mb-2">Talla</label>
+          <select id="filter-size" class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20">
+            <option value="all">Todas</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sr-only">Listado de productos</h2>
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="abrigos" data-size="s m l">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80" alt="Trench beige clásico francés" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Trench Claire</h3><p class="text-sm text-noir/70">Abrigos · S/M/L</p><p class="mt-2 font-semibold">€520</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="vestidos" data-size="s m">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Vestido negro de lujo minimalista" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Robe Noémie</h3><p class="text-sm text-noir/70">Vestidos · S/M</p><p class="mt-2 font-semibold">€460</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="camisas" data-size="m l">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" alt="Camisa beige de algodón orgánico" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Chemise Élise</h3><p class="text-sm text-noir/70">Camisas · M/L</p><p class="mt-2 font-semibold">€190</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="pantalones" data-size="s m l">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" alt="Pantalón camel de pinzas" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Pantalon Célia</h3><p class="text-sm text-noir/70">Pantalones · S/M/L</p><p class="mt-2 font-semibold">€240</p>
+        </article>
+
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="abrigos" data-size="m l">
+          <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1000&q=80" alt="Abrigo largo en tono grafito" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Manteau Odette</h3><p class="text-sm text-noir/70">Abrigos · M/L</p><p class="mt-2 font-semibold">€610</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="vestidos" data-size="s l">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80" alt="Vestido marfil con caída fluida" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Robe Aimée</h3><p class="text-sm text-noir/70">Vestidos · S/L</p><p class="mt-2 font-semibold">€430</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="camisas" data-size="s m">
+          <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=1000&q=80" alt="Camisa blanca premium con cuello estructurado" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Chemise Solène</h3><p class="text-sm text-noir/70">Camisas · S/M</p><p class="mt-2 font-semibold">€210</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="pantalones" data-size="m l">
+          <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1000&q=80" alt="Pantalón negro recto elegante" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Pantalon Louise</h3><p class="text-sm text-noir/70">Pantalones · M/L</p><p class="mt-2 font-semibold">€260</p>
+        </article>
+
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="abrigos" data-size="s m">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80" alt="Blazer marfil femenino de alta costura" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Blazer Aline</h3><p class="text-sm text-noir/70">Abrigos · S/M</p><p class="mt-2 font-semibold">€390</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="vestidos" data-size="m l">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80" alt="Vestido midi marrón oscuro" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Robe Victoire</h3><p class="text-sm text-noir/70">Vestidos · M/L</p><p class="mt-2 font-semibold">€445</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="camisas" data-size="s l">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=80" alt="Camisa negra slim para look minimalista" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Chemise Maëlle</h3><p class="text-sm text-noir/70">Camisas · S/L</p><p class="mt-2 font-semibold">€205</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="pantalones" data-size="s m">
+          <img src="https://images.unsplash.com/photo-1506629905607-d9c297d6f4d8?auto=format&fit=crop&w=1000&q=80" alt="Pantalón de lino claro para verano" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Pantalon Éloïse</h3><p class="text-sm text-noir/70">Pantalones · S/M</p><p class="mt-2 font-semibold">€225</p>
+        </article>
+
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="abrigos" data-size="l">
+          <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=80" alt="Chaqueta cruzada gris topo" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Veste Lucie</h3><p class="text-sm text-noir/70">Abrigos · L</p><p class="mt-2 font-semibold">€310</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="vestidos" data-size="s m l">
+          <img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=1000&q=80" alt="Vestido satinado en tono champán" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Robe Cécile</h3><p class="text-sm text-noir/70">Vestidos · S/M/L</p><p class="mt-2 font-semibold">€480</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="camisas" data-size="m">
+          <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=1000&q=80" alt="Camisa azul grisácea premium" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Chemise Pauline</h3><p class="text-sm text-noir/70">Camisas · M</p><p class="mt-2 font-semibold">€195</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="pantalones" data-size="l">
+          <img src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?auto=format&fit=crop&w=1000&q=80" alt="Pantalón sastre negro de pierna ancha" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Pantalon Margot</h3><p class="text-sm text-noir/70">Pantalones · L</p><p class="mt-2 font-semibold">€275</p>
+        </article>
+
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="abrigos" data-size="s m l">
+          <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=1000&q=80" alt="Abrigo recto de paño marino" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Manteau Diane</h3><p class="text-sm text-noir/70">Abrigos · S/M/L</p><p class="mt-2 font-semibold">€640</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="vestidos" data-size="m">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1000&q=80" alt="Vestido corto negro clásico" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Robe Juliette</h3><p class="text-sm text-noir/70">Vestidos · M</p><p class="mt-2 font-semibold">€410</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="camisas" data-size="s m l">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Camisa de seda marfil para mujer" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Chemise Adèle</h3><p class="text-sm text-noir/70">Camisas · S/M/L</p><p class="mt-2 font-semibold">€235</p>
+        </article>
+        <article class="product-card bg-white border border-sable/80 rounded-2xl p-4" data-category="pantalones" data-size="s l">
+          <img src="https://images.unsplash.com/photo-1509803874385-db7c23652552?auto=format&fit=crop&w=1000&q=80" alt="Pantalón beige de tiro alto" class="rounded-xl h-56 w-full object-cover" />
+          <h3 class="font-serif text-xl mt-4">Pantalon Romy</h3><p class="text-sm text-noir/70">Pantalones · S/L</p><p class="mt-2 font-semibold">€250</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-sable bg-white/70 mt-14">
+    <div class="container mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section>
+        <h2 class="font-serif text-xl mb-3">Maison Épure</h2>
+        <p class="text-noir/70">Moda francesa de lujo minimalista para una elegancia cotidiana y atemporal.</p>
+      </section>
+      <nav aria-label="Categorías">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Categorías</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="catalogo.html" class="hover:text-noir">Abrigos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Vestidos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Camisas</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Legal</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="#" class="hover:text-noir">Términos y condiciones</a></li>
+          <li><a href="#" class="hover:text-noir">Política de privacidad</a></li>
+          <li><a href="#" class="hover:text-noir">Cambios y devoluciones</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Contacto</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li>Email: concierge@maisonepure.com</li>
+          <li>Tel: +33 1 84 00 00 00</li>
+          <li>París, Francia</li>
+        </ul>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    const categoryFilter = document.getElementById("filter-category");
+    const sizeFilter = document.getElementById("filter-size");
+    const cards = [...document.querySelectorAll(".product-card")];
+
+    function applyFilters() {
+      const category = categoryFilter.value;
+      const size = sizeFilter.value;
+
+      cards.forEach((card) => {
+        const categoryMatch = category === "all" || card.dataset.category === category;
+        const sizeMatch = size === "all" || card.dataset.size.split(" ").includes(size);
+        card.classList.toggle("hidden", !(categoryMatch && sizeMatch));
+      });
+    }
+
+    categoryFilter.addEventListener("change", applyFilters);
+    sizeFilter.addEventListener("change", applyFilters);
+  </script>
+</body>
+</html>
