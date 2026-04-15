@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checkout Maison Épure en 3 pasos: datos personales, dirección de entrega y pago seguro." />
+  <title>Checkout | Maison Épure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: "#F7F4EF",
+            noir: "#151515",
+            taupe: "#8A7F74",
+            sable: "#DED6CA"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-creme text-noir font-sans antialiased">
+  <header class="border-b border-sable/80 bg-creme/95 sticky top-0 z-30 backdrop-blur">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-2xl font-serif tracking-wide" title="Ir a la página principal de Maison Épure">Maison Épure</a>
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.18em]">
+          <a href="index.html" class="hover:text-taupe transition">Inicio</a>
+          <a href="catalogo.html" class="hover:text-taupe transition">Catálogo</a>
+          <a href="carrito.html" class="hover:text-taupe transition">Carrito</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <form role="search" class="hidden sm:block">
+            <label for="search-checkout" class="sr-only">Buscar productos</label>
+            <input id="search-checkout" type="search" placeholder="Buscar" class="w-32 lg:w-44 rounded-full border border-sable bg-white/80 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-noir/20" />
+          </form>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.18em] text-taupe" title="Acceder a tu cuenta">Cuenta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-8">
+      <h1 class="font-serif text-4xl">Checkout</h1>
+      <p class="text-noir/70 mt-2">Proceso seguro en 3 pasos para completar tu pedido.</p>
+    </section>
+
+    <section class="bg-white border border-sable/80 rounded-2xl p-5 sm:p-8">
+      <h2 class="sr-only">Formulario de checkout</h2>
+      <p class="text-sm text-noir/70 mb-2">Paso <span id="step-text">1</span> de 3</p>
+      <div class="h-2 w-full bg-sable/60 rounded-full overflow-hidden mb-7">
+        <div id="progress" class="h-full bg-noir w-1/3 transition-all"></div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-8 text-xs sm:text-sm uppercase tracking-[0.12em]">
+        <button type="button" data-step-btn="1" class="step-btn rounded-full border border-noir bg-noir text-creme px-3 py-2">1. Datos</button>
+        <button type="button" data-step-btn="2" class="step-btn rounded-full border border-noir px-3 py-2">2. Dirección</button>
+        <button type="button" data-step-btn="3" class="step-btn rounded-full border border-noir px-3 py-2">3. Pago</button>
+      </div>
+
+      <form id="checkout-form" class="space-y-8">
+        <fieldset data-step="1" class="step-panel space-y-4">
+          <legend class="font-serif text-2xl mb-1">Datos Personales</legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="nombre" class="block text-sm mb-2">Nombre</label>
+              <input id="nombre" name="nombre" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="apellidos" class="block text-sm mb-2">Apellidos</label>
+              <input id="apellidos" name="apellidos" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm mb-2">Email</label>
+              <input id="email" name="email" type="email" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="telefono" class="block text-sm mb-2">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset data-step="2" class="step-panel space-y-4 hidden">
+          <legend class="font-serif text-2xl mb-1">Dirección de Entrega</legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:col-span-2">
+              <label for="direccion" class="block text-sm mb-2">Dirección</label>
+              <input id="direccion" name="direccion" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="ciudad" class="block text-sm mb-2">Ciudad</label>
+              <input id="ciudad" name="ciudad" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="cp" class="block text-sm mb-2">Código Postal</label>
+              <input id="cp" name="cp" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="pais" class="block text-sm mb-2">País</label>
+              <input id="pais" name="pais" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset data-step="3" class="step-panel space-y-4 hidden">
+          <legend class="font-serif text-2xl mb-1">Pago</legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:col-span-2">
+              <label for="card-name" class="block text-sm mb-2">Titular de la tarjeta</label>
+              <input id="card-name" name="card-name" type="text" required class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div class="md:col-span-2">
+              <label for="card-number" class="block text-sm mb-2">Número de tarjeta</label>
+              <input id="card-number" name="card-number" type="text" inputmode="numeric" required maxlength="19" placeholder="1234 5678 9012 3456" class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="card-exp" class="block text-sm mb-2">Fecha de expiración</label>
+              <input id="card-exp" name="card-exp" type="text" required placeholder="MM/AA" maxlength="5" class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+            <div>
+              <label for="card-cvc" class="block text-sm mb-2">CVC</label>
+              <input id="card-cvc" name="card-cvc" type="text" inputmode="numeric" required maxlength="4" class="w-full rounded-xl border border-sable px-4 py-3 bg-creme focus:outline-none focus:ring-2 focus:ring-noir/20" />
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <button type="button" id="prev-btn" class="hidden rounded-full border border-noir px-6 py-3 text-sm uppercase tracking-[0.15em] hover:bg-noir hover:text-creme transition">Atrás</button>
+          <button type="button" id="next-btn" class="rounded-full bg-noir text-creme px-6 py-3 text-sm uppercase tracking-[0.15em] hover:bg-noir/90 transition">Continuar</button>
+          <button type="submit" id="submit-btn" class="hidden rounded-full bg-noir text-creme px-6 py-3 text-sm uppercase tracking-[0.15em] hover:bg-noir/90 transition">Confirmar compra</button>
+          <a href="carrito.html" class="rounded-full border border-sable px-6 py-3 text-sm uppercase tracking-[0.15em] hover:border-noir transition">Volver al carrito</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-sable bg-white/70 mt-14">
+    <div class="container mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section>
+        <h2 class="font-serif text-xl mb-3">Maison Épure</h2>
+        <p class="text-noir/70">Moda francesa de lujo minimalista para una elegancia cotidiana y atemporal.</p>
+      </section>
+      <nav aria-label="Categorías">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Categorías</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="catalogo.html" class="hover:text-noir">Abrigos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Vestidos</a></li>
+          <li><a href="catalogo.html" class="hover:text-noir">Camisas</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Legal</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li><a href="#" class="hover:text-noir">Términos y condiciones</a></li>
+          <li><a href="#" class="hover:text-noir">Política de privacidad</a></li>
+          <li><a href="#" class="hover:text-noir">Cambios y devoluciones</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2 class="font-semibold uppercase tracking-[0.12em] mb-3">Contacto</h2>
+        <ul class="space-y-2 text-noir/75">
+          <li>Email: concierge@maisonepure.com</li>
+          <li>Tel: +33 1 84 00 00 00</li>
+          <li>París, Francia</li>
+        </ul>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    const panels = [...document.querySelectorAll(".step-panel")];
+    const stepButtons = [...document.querySelectorAll(".step-btn")];
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+    const progress = document.getElementById("progress");
+    const stepText = document.getElementById("step-text");
+    const form = document.getElementById("checkout-form");
+    let currentStep = 1;
+
+    function renderStep() {
+      panels.forEach((panel) => {
+        const step = Number(panel.dataset.step);
+        panel.classList.toggle("hidden", step !== currentStep);
+      });
+
+      stepButtons.forEach((btn) => {
+        const step = Number(btn.dataset.stepBtn);
+        const active = step === currentStep;
+        btn.classList.toggle("bg-noir", active);
+        btn.classList.toggle("text-creme", active);
+      });
+
+      prevBtn.classList.toggle("hidden", currentStep === 1);
+      nextBtn.classList.toggle("hidden", currentStep === 3);
+      submitBtn.classList.toggle("hidden", currentStep !== 3);
+      stepText.textContent = String(currentStep);
+      progress.className = "h-full bg-noir transition-all";
+
+      if (currentStep === 1) progress.classList.add("w-1/3");
+      if (currentStep === 2) progress.classList.add("w-2/3");
+      if (currentStep === 3) progress.classList.add("w-full");
+    }
+
+    function validateCurrentStep() {
+      const activePanel = document.querySelector(`[data-step=\"${currentStep}\"]`);
+      const fields = [...activePanel.querySelectorAll("input[required]")];
+      return fields.every((input) => input.reportValidity());
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (!validateCurrentStep()) return;
+      currentStep = Math.min(currentStep + 1, 3);
+      renderStep();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentStep = Math.max(currentStep - 1, 1);
+      renderStep();
+    });
+
+    stepButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetStep = Number(btn.dataset.stepBtn);
+        if (targetStep > currentStep && !validateCurrentStep()) return;
+        currentStep = targetStep;
+        renderStep();
+      });
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!validateCurrentStep()) return;
+      alert("Pedido confirmado. Gracias por comprar en Maison Épure.");
+    });
+
+    renderStep();
+  </script>
+</body>
+</html>
